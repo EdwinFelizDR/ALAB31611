@@ -57,10 +57,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //1. Create an <a> element.
 document.addEventListener('DOMContentLoaded', () => {
+   // Select and cache the <nav id="top-menu"> element
    const topMenuEl = document.getElementById('top-menu');
-   for(i = 0; i < menuLinks.length; i++){
-      let aElement = document.createElement("a");
-      topMenuEl.appendChild(aElement);
-   }
-});
 
+   // Iterate over the entire menuLinks array
+   menuLinks.forEach(link => {
+       // 1. Create an <a> element
+       const aElement = document.createElement('a');
+       
+       // 2. Add an href attribute with its value set to the href property of the "link" object
+       aElement.setAttribute('href', link.href);
+       
+       // 3. Set the new element's content to the value of the text property of the "link" object
+       aElement.textContent = link.text;
+       
+       // 4. Append the new element to the topMenuEl element
+       topMenuEl.appendChild(aElement);
+   });
+});
