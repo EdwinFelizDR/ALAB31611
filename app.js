@@ -3,20 +3,19 @@
 
 // data structure to create menu buttons. 
 var menuLinks = [ 
-   { text: 'about', href: '/about' }, 
-   { text: 'catalog', href: '/catalog' }, 
-   { text: 'orders', href: '/orders' }, 
-   { text: 'account', href: '/account' }, 
+   { text: 'about', href: '/about.html' }, 
+   { text: 'catalog', href: '/catalog.html' }, 
+   { text: 'orders', href: '/orders.html' }, 
+   { text: 'account', href: '/account.html' }, 
  ]; 
  
 // Part 1: Getting Started 
 
-document.addEventListener('DOMContentLoaded', () => {
    // 1.	Select and cache the <main> element in a variable named mainEl. 
    const mainEl = document.querySelector('main');
 
    // Get the value of the --main-bg CSS custom property
-   const mainBgColor = getComputedStyle(document.documentElement).getPropertyValue('--main-bg').trim();
+   const mainBgColor = 'var(--main-bg)';
 
    //2. Set the background color of mainEl
    mainEl.style.backgroundColor = mainBgColor;
@@ -26,11 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
    //4. Add the class "flex-ctr" to mainEl
       mainEl.classList.add('flex-ctr');
-});
 
 
 //Part 2: Creating a Menu Bar 
-document.addEventListener('DOMContentLoaded', () => {
    // 1.Select and cache the <nav id="top-menu"> element in a variable named topMenuEl
    const topMenuEl = document.getElementById('top-menu');
 
@@ -39,13 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
    //3. Set the background color of topMenuEl 
    //to the value stored in the --top-menu-bg CSS custom property
-   const topMenuBgColor = getComputedStyle(document.documentElement).getPropertyValue('--top-menu-bg').trim();
+   const topMenuBgColor = ('var(--top-menu-bg)').trim();
    topMenuEl.style.backgroundColor = topMenuBgColor;
    
    //4. Add the class "flex-around" to topMenuEl
    topMenuEl.classList.add('flex-around');
-});
-
 
 //Part 3: Adding Menu Buttons
 /*Iterate over the entire menuLinks array and for each "link" object: 
@@ -56,10 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
 */
 
 //1. Create an <a> element.
-document.addEventListener('DOMContentLoaded', () => {
-   // Select and cache the <nav id="top-menu"> element
-   const topMenuEl = document.getElementById('top-menu');
-
    // Iterate over the entire menuLinks array
    menuLinks.forEach(link => {
        // 1. Create an <a> element
@@ -74,4 +65,4 @@ document.addEventListener('DOMContentLoaded', () => {
        // 4. Append the new element to the topMenuEl element
        topMenuEl.appendChild(aElement);
    });
-});
+
